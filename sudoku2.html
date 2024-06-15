@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+        <title>
+            Sudoku
+        </title>
+        <style>
+            :root {
+                --color: #EEEEEE;
+                --border-color: #777777;
+                --background: #222222;
+            }
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 100%;
+                background: #181800;
+                color: var(--color);
+            }
+            table, td {
+                border-style: none;
+                border-collapse: collapse;
+                text-align: left;
+                vertical-align: top;
+            }
+            input {
+                font-size: 1em;
+                background: var(--background);
+                border: 1px;
+                border-color: var(--border-color);
+                border-style: solid;
+            }
+            input[type=button] {
+                color: #00FF00;
+            }
+            a {
+                color: #00B0FF;
+            }
+            select {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 0.9em;
+                background: var(--background);
+                color: var(--color);
+                border: 1px;
+                border-color: var(--color);
+                border-style: solid;
+            }
+        </style>
+    </head>
+    <body onload="changeGrid();">
+        <script src="sudoku2.js">
+        </script>
+        <h1>
+            Sudoku
+        </h1>
+        <label for="gridType">
+            Value Range:
+        </label>
+        <select id="gridType" onChange="changeGrid();">
+            <option value="33N" selected>1..9</option>
+            <option value="33A">A..I</option>
+            <option value="44N">1..9A..G</option>
+            <option value="44A">A..P</option>
+            <option value="45N">1..9A..K</option>
+            <option value="45A">A..T</option>
+        </select>
+        <br>
+        <br>
+        <div id="theGrid">
+        </div>
+        <br>
+        <input type="button" value="Back" onclick="back();">&nbsp;&nbsp;
+        <input type="button" value="Clear" onclick="clearGrid();">
+        <br>
+        <br>
+        <p id="notification">
+        </p>
+    </body>
+</html>
+
+<!--
+
+:root {
+    --color: #EEEEEE;
+    --background: #222222;
+    --hiBackground: #444444;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    background: #181800;
+    color: var(--color);
+}
+table, td, th {
+    border-style: none;
+    border-collapse: collapse;
+    text-align: left;
+    vertical-align: top;
+}
+th {
+    color: #BBBBBB;
+}
+input {
+    font-size: 1em;
+    background: var(--background);
+    border: 1px;
+    border-color: var(--color);
+    border-style: solid;
+}
+input[type=text], input[type=date] {
+    color: #EEEEEE;
+}
+input[type=text]:focus {
+    caret-color: var(--color);
+    border: 3px;
+    border-color: var(--color);
+    border-style: solid;
+}
+input[type=button] {
+    color: #00FF00;
+}
+input[type=submit] {
+    color: #00FF00;
+}
+a {
+    color: #00B0FF;
+}
+p, h4 {
+    margin: 0em 0em 0.5em 0em;
+}
+h4 {
+    color: #BBBBBB;
+}
+select {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    background: var(--background);
+    color: var(--color);
+    border: 1px;
+    border-color: var(--color);
+    border-style: solid;
+}
+.intd {
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+}
+.intd1 {
+    padding-top: 0.25em;
+    padding-left: 0.25em;
+}
+.intd2 {
+    padding-top: 0.25em;
+    padding-left: 0.25em;
+    text-align: right;
+}
+.outtd {
+    padding-right: 1em;
+}
+.outnum {
+    padding-right: 1em;
+    text-align: right;
+}
+.oddResult { /* even result = ".outtd" */
+    padding-right: 1em;
+    background: var(--hiBackground);
+}
+.result {
+    font-size: 0.75em;
+}
+
+
+-->
